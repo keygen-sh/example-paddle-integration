@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "form-data": "^2.3.1",
+    "morgan": "^1.8.2",
+    "node-fetch": "^1.7.2",
+    "php-serialize": "^1.2.5",
+    "sha1": "^1.1.1"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Purchase Software</title>
+  </head>
+  <body>
+    <h1>Purchase Software</h1>
+    <button id='checkout-button'>
+      Subscribe to Pro
+    </button>
+    <script src='https://cdn.paddle.com/paddle/paddle.js'></script>
+    <script type='text/javascript'>
+      Paddle.Setup({
+        vendor: <%= PADDLE_VENDOR_ID %>
+      })
+    </script>
+    <script type='text/javascript'>
+      const button = document.getElementById('checkout-button')
+      button.addEventListener('click', event => {
+        Paddle.Checkout.open({
+          product: <%= PADDLE_PLAN_ID %>,
+          allowQuantity: false
+        })
+      })
+    </script>
+  </body>
+</html>
