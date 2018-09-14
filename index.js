@@ -53,7 +53,7 @@ app.post('/paddle-webhooks', async (req, res) => {
   const { body: paddleEvent } = req
 
   if (!verifyPaddleWebhook(paddleEvent)) {
-    return res.status(400).send('Bad public key') // Webhook was not sent from Paddle
+    return res.status(400).send('Bad signature or public key') // Webhook was not sent from Paddle
   }
 
   switch (paddleEvent.alert_name) {
